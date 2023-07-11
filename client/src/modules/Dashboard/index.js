@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch("https://server-3phz.onrender.com/users", {
+      const res = await fetch("http://localhost:8000/users", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const Dashboard = () => {
   }, []);
 
   const fetchMessages = async (anotherUserId) => {
-    const res = await fetch("https://server-3phz.onrender.com/messages", {
+    const res = await fetch("http://localhost:8000/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const Dashboard = () => {
     	receiverId: anotherUser._id,
     	message,
     });
-    const res = await fetch(`https://server-3phz.onrender.com/sendMessage`, {
+    const res = await fetch(`http://localhost:8000/sendMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
